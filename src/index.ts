@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const tub = button({ label:'asdasd' })
 
   root.innerHTML = greeting
+  btn.innerHTML = tub
 
 })
 
