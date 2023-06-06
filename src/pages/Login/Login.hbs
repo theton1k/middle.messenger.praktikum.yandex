@@ -1,0 +1,10 @@
+
+<form class="authflow-form">
+    {{> FormHeader text='Вход' inputID='login' }}
+    {{> Input className='login-input' label='Логин' inputID='login' }}
+    {{> Input className='login-input' label='Пароль' inputID='password' type='password' }}
+    <div class="button-block">
+        {{> Button type='button' text='Авторизоваться' id='loginButton' }}
+        {{> Button type='button' className='clear' text='Нет аккаунта?' id='signUp' }}
+    </div>
+</form>

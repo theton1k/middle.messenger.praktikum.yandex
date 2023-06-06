@@ -1,20 +1,33 @@
-import Handlebars from 'handlebars/runtime'
-import button from './partials/button.hbs'
-import greetings from './templates/greetings.hbs'
+import Handlebars from "handlebars/runtime";
+import partials from './partials'
+import pages from "./pages";
 
-
-Handlebars.registerPartial('button', button);
+import './scss/index.scss'
 
 document.addEventListener('DOMContentLoaded',()=>{
   const root = document.querySelector('#app')!
-  const btn = document.querySelector('#qweasd')!
 
+  Object.entries(partials).forEach(([key, value]) =>{
+    Handlebars.registerPartial(key, value)
+  })
 
-  const greeting = greetings({ username:'JABA' })
-  const tub = button({ label:'asdasd' })
+  const login = () =>{
+    alert('login')
+  }
 
-  root.innerHTML = greeting
-  btn.innerHTML = tub
+  const signUp = () =>{
+    alert('signUp')
+  }
+
+  root.innerHTML = pages.LoginPage()
+
+  const loginButton = document.getElementById('loginButton')!
+
+  loginButton.onclick = login
+
+  const signUpButton = document.getElementById('signUp')!
+
+  signUpButton.onclick = signUp
 
 })
 

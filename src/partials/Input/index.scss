@@ -1,0 +1,7 @@
+input {
+  border-bottom: 1px solid var(--color-transparent);
+}
+
+input:focus {
+  border-bottom: 1px solid var(--color-blue);
+}
