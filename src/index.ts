@@ -1,14 +1,13 @@
 import Handlebars from "handlebars";
-import partials from './partials'
+
 import pages from "./pages";
+import partials from './components'
 
 import './scss/index.scss'
 
 Object.entries(partials).forEach(([key, value]) =>{
   Handlebars.registerPartial(key, value)
 })
-
-
 
 document.addEventListener('DOMContentLoaded',()=>{
   const root = document.querySelector('#app')!
@@ -63,7 +62,5 @@ document.addEventListener('DOMContentLoaded',()=>{
   })
 
   renderLoginPage()
-  // renderSignUpPage()
-
 })
 
