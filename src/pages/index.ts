@@ -1,4 +1,4 @@
-import {LoginPage} from "./Login";
+import AuthFlow from "./AuthFlow";
 
 
-export default {LoginPage}
+export default {...AuthFlow}
