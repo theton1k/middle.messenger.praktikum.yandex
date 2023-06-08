@@ -4,12 +4,32 @@ import pages from "./pages";
 import partials from './components'
 
 import './scss/index.scss'
+import context from "./data/context";
 
-Object.entries(partials).forEach(([key, value]) =>{
+Object.entries(partials).forEach(([key, value]) => {
   Handlebars.registerPartial(key, value)
 })
 
-document.addEventListener('DOMContentLoaded',()=>{
+Handlebars.registerHelper("authFormInputs", function(context, options) {
+  return (
+    context
+      .map(function(item: any) {
+        return options.fn(item)
+      }).join("\n")
+  );
+});
+
+Handlebars.registerHelper("authFormButtons", function(context, options) {
+  return (
+    context
+      .map(function(item: any) {
+        return options.fn(item)
+      })
+      .join("\n")
+  );
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   const root = document.querySelector('#app')!
 
   function handleLogin() {
@@ -34,8 +54,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
   function renderLoginPage() {
+    const loginPageTemplate =  Handlebars.compile(pages.LoginPage)(context.loginContext)
 
-    root.innerHTML = Handlebars.compile(pages.LoginPage)({})
+    root.innerHTML = loginPageTemplate
 
     const loginButton = document.getElementById('loginBtn')!
     const navToSignUpButton = document.getElementById('navToSignUpBtn')!
@@ -44,16 +65,23 @@ document.addEventListener('DOMContentLoaded',()=>{
     navToSignUpButton.onclick = handleNavToSignUp
   }
 
+  function renderChatPage() {
+    const chatPageTemplate =  Handlebars.compile(pages.ChatPage)(context.loginContext)
+
+    root.innerHTML = chatPageTemplate
+
+  }
+
   function renderSignUpPage() {
 
-    root.innerHTML = Handlebars.compile(pages.SignUpPage)({})
+    const signUpPageTemplate =  Handlebars.compile(pages.SignUpPage)(context.signUpContext)
+
+    root.innerHTML = signUpPageTemplate
 
     const signUpButton = document.getElementById('signUpBtn')!
-
-    signUpButton.onclick = handleSignUp
-
     const navToLoginButton = document.getElementById('navToLoginBtn')!
 
+    signUpButton.onclick = handleSignUp
     navToLoginButton.onclick = handleNavToLogin
   }
 
@@ -61,6 +89,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     Handlebars.registerPartial(key, value)
   })
 
-  renderLoginPage()
+  // renderLoginPage()
+  renderChatPage()
 })
 

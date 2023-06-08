@@ -1,5 +1,5 @@
-import LoginPage from "./Login.tmpl.ts";
-import SignUpPage from "./SignUp.tmpl.ts";
+import LoginPage from "./Login/Login.ts";
+import SignUpPage from "./SignUp/SignUp.ts";
 
 
-export default {LoginPage,SignUpPage}
+export default { LoginPage, SignUpPage }

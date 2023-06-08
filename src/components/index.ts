@@ -1,7 +1,7 @@
 import Button from './Button/Button.tmpl.ts'
-import Input from './Input/Input.templ.ts'
-import FormHeader from "./FormHeader/FormHeader.tmpl.ts";
+import FormInput from './FormInput/FormInput.templ.ts'
+import Navlink from './Navlink/Navlink.templ.ts'
 
 
-export default {Button, Input, FormHeader}
+export default {Button, Navlink, FormInput}
 
