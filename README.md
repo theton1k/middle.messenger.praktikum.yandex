@@ -11,3 +11,17 @@ https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?type=design
 - `yarn install` — установка стабильной версии,
 - `yarn start` — запуск версии для разработчика,
 - `yarn build` — сборка стабильной версии.
+
+## Домен netlify 
+https://mellifluous-dieffenbachia-054d33.netlify.app/
+
+## Сверстанные страницы
+### main:  https://mellifluous-dieffenbachia-054d33.netlify.app/main
+### login:  https://mellifluous-dieffenbachia-054d33.netlify.app/login
+### signUp:  https://mellifluous-dieffenbachia-054d33.netlify.app/signUp
+### profile:  https://mellifluous-dieffenbachia-054d33.netlify.app/profile
+### change password:  https://mellifluous-dieffenbachia-054d33.netlify.app/change-password
+### change data:  https://mellifluous-dieffenbachia-054d33.netlify.app/change-data
+### 404:  https://mellifluous-dieffenbachia-054d33.netlify.app/not-found
+### 5**:  https://mellifluous-dieffenbachia-054d33.netlify.app/server-error
+

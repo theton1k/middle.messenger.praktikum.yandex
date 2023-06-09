@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.querySelector('#app')!
 
-  console.log('window.location.href',window.location.href)
+  const domain = 'mellifluous-dieffenbachia-054d33.netlify.app'
 
-  const path = window.location.href.replace('http://localhost:3000/','')
+  const path = window.location.href.replace(domain , '')
 
   const getPage = () =>{
     switch (path) {
