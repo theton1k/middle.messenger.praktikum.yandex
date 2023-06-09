@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.querySelector('#app')!
 
-  const path = window.location.href.replace(domain , '')
+  const path = window.location.href.split(domain).at(-1)
 
   const getPage = () =>{
     switch (path) {
