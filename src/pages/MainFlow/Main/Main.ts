@@ -5,14 +5,12 @@ import {handlebarsCompile} from "../../../utils/handlebarsCompile.ts";
 const Main =  widgets.Chat
 const ChatList =  widgets.ChatList
 
-
 const MainPage = `
 <div class=${styles.chatWrapper}>
-    ${ChatList}
-    ${Main}
+  ${ChatList}
+  ${Main}
 </div>
 `
-
 
 export default handlebarsCompile(MainPage)
 
