@@ -27,7 +27,7 @@ const signUp = {
 }
 
 const notFound = {
-  errorCode: 400,
+  errorCode: 404,
   description: 'Не туда попали',
 }
 

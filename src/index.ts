@@ -4,15 +4,12 @@ import pages from "./pages";
 import partials from './components'
 
 import './scss/index.scss'
+import {domain} from "./config.ts";
 
 
 Object.entries(partials).forEach(([key, value]) => {
   Handlebars.registerPartial(key, value)
 })
-
-window.onpopstate = () =>{
-  console.log('asdkaposdkaosk')
-}
 
 Handlebars.registerHelper("authFormInputs", function(context, options) {
   return (
@@ -37,26 +34,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.querySelector('#app')!
 
-  const domain = 'mellifluous-dieffenbachia-054d33.netlify.app'
-
   const path = window.location.href.replace(domain , '')
+
+  console.log('path', path)
 
   const getPage = () =>{
     switch (path) {
-      case 'http://localhost:3000/login':
+      case '/login':
       case '':
+      case '/':
         return pages.Login()
-      case 'auth':
+      case '/auth':
         return pages.SignUp()
-      case 'main':
+      case '/main':
         return pages.Main()
-      case 'profile':
+      case '/profile':
         return pages.Profile()
-      case 'change-password':
+      case '/change-password':
         return pages.ChangePassword()
-      case 'change-data':
+      case '/change-data':
         return pages.ChangeData()
-      case 'server-error':
+      case '/server-error':
         return pages.ServerError()
       default:
         return pages.NotFound()
