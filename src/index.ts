@@ -36,15 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const path = window.location.href.replace(domain , '')
 
-  console.log('path', path)
-
   const getPage = () =>{
     switch (path) {
       case '/login':
       case '':
       case '/':
         return pages.Login()
-      case '/auth':
+      case '/sign-up':
         return pages.SignUp()
       case '/main':
         return pages.Main()
