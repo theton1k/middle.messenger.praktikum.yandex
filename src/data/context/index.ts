@@ -1,4 +1,4 @@
-const loginContext = {
+const login = {
   inputs: [
     { label: 'Логин', inputID: 'login' },
     { label: 'Пароль', inputID: 'password',type: 'password' },
@@ -10,7 +10,7 @@ const loginContext = {
   headerText: 'Вход',
 }
 
-const signUpContext = {
+const signUp = {
   inputs: [
     { label: 'Почта', inputID: 'email', type: 'email' },
     { label: 'Логин', inputID: 'login', type: 'login' },
@@ -26,4 +26,14 @@ const signUpContext = {
   headerText: 'Регистрация',
 }
 
-export default {signUpContext, loginContext}
+const notFound = {
+  errorCode: 400,
+  description: 'Не туда попали',
+}
+
+const serverError = {
+  errorCode: 500,
+  description: 'Мы уже фиксим',
+}
+
+export default {signUp, login, notFound, serverError}

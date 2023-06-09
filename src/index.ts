@@ -4,11 +4,15 @@ import pages from "./pages";
 import partials from './components'
 
 import './scss/index.scss'
-import context from "./data/context";
+
 
 Object.entries(partials).forEach(([key, value]) => {
   Handlebars.registerPartial(key, value)
 })
+
+window.onpopstate = () =>{
+  console.log('asdkaposdkaosk')
+}
 
 Handlebars.registerHelper("authFormInputs", function(context, options) {
   return (
@@ -30,66 +34,36 @@ Handlebars.registerHelper("authFormButtons", function(context, options) {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+
   const root = document.querySelector('#app')!
 
-  function handleLogin() {
-   history.pushState({},'','/main')
+  console.log('window.location.href',window.location.href)
+
+  const path = window.location.href.replace('http://localhost:3000/','')
+
+  const getPage = () =>{
+    switch (path) {
+      case 'http://localhost:3000/login':
+      case '':
+        return pages.Login()
+      case 'auth':
+        return pages.SignUp()
+      case 'main':
+        return pages.Main()
+      case 'profile':
+        return pages.Profile()
+      case 'change-password':
+        return pages.ChangePassword()
+      case 'change-data':
+        return pages.ChangeData()
+      case 'server-error':
+        return pages.ServerError()
+      default:
+        return pages.NotFound()
+
+    }
   }
 
-  function handleNavToSignUp() {
-    history.pushState({},'','/signUp')
-    renderSignUpPage()
-
-  }
-
-  function handleNavToLogin() {
-    history.pushState({},'','/login')
-    renderLoginPage()
-  }
-
-  function handleSignUp() {
-    history.pushState({},'','/login')
-    renderLoginPage()
-  }
-
-
-  function renderLoginPage() {
-    const loginPageTemplate =  Handlebars.compile(pages.LoginPage)(context.loginContext)
-
-    root.innerHTML = loginPageTemplate
-
-    const loginButton = document.getElementById('loginBtn')!
-    const navToSignUpButton = document.getElementById('navToSignUpBtn')!
-
-    loginButton.onclick = handleLogin
-    navToSignUpButton.onclick = handleNavToSignUp
-  }
-
-  function renderChatPage() {
-    const chatPageTemplate =  Handlebars.compile(pages.ChatPage)(context.loginContext)
-
-    root.innerHTML = chatPageTemplate
-
-  }
-
-  function renderSignUpPage() {
-
-    const signUpPageTemplate =  Handlebars.compile(pages.SignUpPage)(context.signUpContext)
-
-    root.innerHTML = signUpPageTemplate
-
-    const signUpButton = document.getElementById('signUpBtn')!
-    const navToLoginButton = document.getElementById('navToLoginBtn')!
-
-    signUpButton.onclick = handleSignUp
-    navToLoginButton.onclick = handleNavToLogin
-  }
-
-  Object.entries(partials).forEach(([key, value]) =>{
-    Handlebars.registerPartial(key, value)
-  })
-
-  // renderLoginPage()
-  renderChatPage()
+  root.innerHTML = getPage()
 })
 

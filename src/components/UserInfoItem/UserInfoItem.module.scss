@@ -1,0 +1,25 @@
+.userInfoItem {
+  width: 100%;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  align-items: center;
+  font-size: var(--font-l);
+  justify-content: space-between;
+}
+
+.fieldName {
+  color: var(--color-black);
+}
+
+.fieldValue {
+  color: var(--color-gray);
+  flex:1;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: 30px;
+  background: var(--color-transparent);
+}

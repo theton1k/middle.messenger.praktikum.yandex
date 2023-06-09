@@ -4,6 +4,11 @@
   box-sizing: border-box;
   border: none;
   outline: none;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 input:-webkit-autofill {

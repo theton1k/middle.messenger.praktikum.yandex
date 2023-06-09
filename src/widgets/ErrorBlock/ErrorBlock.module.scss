@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-black);
+
+  .errorCode {
+    font-size: var(--font-xxxl);
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: var(--font-xl);
+    margin-bottom: 70px;
+  }
+
+  .action {
+    color: var(--color-blue);
+    font-size: var(--font-m);
+  }
+
+}
+

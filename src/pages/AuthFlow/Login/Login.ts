@@ -1,7 +1,9 @@
 import widgets from "../../../widgets";
+import context from "../../../data/context";
+import {handlebarsCompile} from "../../../utils/handlebarsCompile.ts";
 
-const LoginPage =  widgets.AuthFormTempl
+const LoginPage =  widgets.AuthForm
 
-export default LoginPage
+export default handlebarsCompile(LoginPage, context.login)
 
 

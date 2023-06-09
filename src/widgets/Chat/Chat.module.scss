@@ -1,0 +1,12 @@
+.chatWindow {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectChat {
+  font-size: var(--font-l);
+  color: var(--color-gray);
+}
