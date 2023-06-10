@@ -1,7 +1,7 @@
 const login = {
   inputs: [
-    { label: 'Логин', inputID: 'login' },
-    { label: 'Пароль', inputID: 'password',type: 'password' },
+    { label: 'Логин', inputName: 'login' },
+    { label: 'Пароль', inputName: 'password',type: 'password' },
   ],
   buttons: [
     { type: 'button', text: 'Войти', id: 'loginBtn', },
@@ -12,12 +12,12 @@ const login = {
 
 const signUp = {
   inputs: [
-    { label: 'Почта', inputID: 'email', type: 'email' },
-    { label: 'Логин', inputID: 'login', type: 'login' },
-    { label: 'Имя', inputID: 'first_name' },
-    { label: 'Фамилия', inputID: 'second_name' },
-    { label: 'Телефон', inputID: 'phone', type: 'tel' },
-    { label: 'Пароль', inputID: 'password',type: 'password' },
+    { label: 'Почта', inputName: 'email', type: 'email' },
+    { label: 'Логин', inputName: 'login', type: 'login' },
+    { label: 'Имя', inputName: 'first_name' },
+    { label: 'Фамилия', inputName: 'second_name' },
+    { label: 'Телефон', inputName: 'phone', type: 'tel' },
+    { label: 'Пароль', inputName: 'password',type: 'password' },
   ],
   buttons: [
     { type: 'button', text:' Зарегистрироваться', id: 'signUpBtn', },

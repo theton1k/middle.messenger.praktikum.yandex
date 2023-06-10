@@ -1,8 +1,8 @@
-import styles from './FromInput.module.scss'
+import styles from './FormInput.module.scss'
 
 export default `
 <div class="${styles.formInput}">
-  <label for={{ inputID }}>{{ label }}</label>
-  <input class="{{ className }}" type="{{ type }}" placeholder={{ label }} name={{ inputID }} id="{{ inputID }}"/>
+  <label for={{ inputName }}>{{ label }}</label>
+  <input class="{{ className }}" type="{{ type }}" placeholder={{ label }} name={{ inputName }} />
 </div>
 `
