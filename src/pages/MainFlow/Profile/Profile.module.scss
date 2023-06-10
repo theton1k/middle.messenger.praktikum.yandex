@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 530px;
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+}
+
+.userDataWrapper,
+.userDataActions {
+  width: 100%;
+}
+
+.name {
+  font-size: var(--font-xl);
+}
+
+.userDataActions {
+  margin-top: 60px;
+
+  .action {
+    font-size: var(--font-l);
+    color: var(--color-blue);
+    padding: 10px 0;
+  }
+
+  .destructive {
+    color: var(--color-red);
+  }
+}
+
+
