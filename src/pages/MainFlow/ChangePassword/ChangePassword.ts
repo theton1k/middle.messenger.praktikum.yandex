@@ -1,5 +1,5 @@
-import styles from './ChangePassword.module.scss'
-import {handlebarsCompile} from "../../../utils/handlebarsCompile.ts";
+import styles from './ChangePassword.module.scss';
+import { handlebarsCompile } from '../../../utils/handlebarsCompile.ts';
 
 const ChangePasswordPage = `
 <div class=${styles.wrapper}>
@@ -15,8 +15,6 @@ const ChangePasswordPage = `
     </form>
   </div>
 </div>
-`
+`;
 
-export default handlebarsCompile(ChangePasswordPage)
-
-
+export default handlebarsCompile(ChangePasswordPage);

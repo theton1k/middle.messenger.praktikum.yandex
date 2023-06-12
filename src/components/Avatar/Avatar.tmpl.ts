@@ -1,3 +1,3 @@
-import styles from './Avatar.module.scss'
+import styles from './Avatar.module.scss';
 
-export default `<input class="${styles.avatar} {{ className }}" name={{ inputName }} disabled />`
+export default `<input class="${styles.avatar} {{ className }}" name={{ inputName }} disabled />`;

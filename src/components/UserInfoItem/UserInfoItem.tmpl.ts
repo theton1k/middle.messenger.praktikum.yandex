@@ -1,4 +1,4 @@
-import styles from './UserInfoItem.module.scss'
+import styles from './UserInfoItem.module.scss';
 
 export default `
 <div class="${styles.userInfoItem} {{ className }}">
@@ -10,5 +10,4 @@ export default `
       {{> Separator }}
     {{/if}}
 </div>
-`
-
+`;

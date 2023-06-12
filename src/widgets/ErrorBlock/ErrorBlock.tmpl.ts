@@ -1,4 +1,4 @@
-import styles from './ErrorBlock.module.scss'
+import styles from './ErrorBlock.module.scss';
 
 export default `
 <div class=${styles.wrapper}>
@@ -6,4 +6,4 @@ export default `
   <p class=${styles.description}>{{ description }}</p>
   {{> Navlink className="${styles.action}" href='/main' text='Назад к чатам' }}
 </div>
-`
+`;

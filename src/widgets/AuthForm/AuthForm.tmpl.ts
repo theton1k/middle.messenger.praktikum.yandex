@@ -1,4 +1,4 @@
-import styles from './AuthForm.module.scss'
+import styles from './AuthForm.module.scss';
 
 export default `
 <form class=${styles.authFlowForm}>
@@ -43,4 +43,4 @@ export default `
       </ul>
     </nav>
 </div>
-`
+`;

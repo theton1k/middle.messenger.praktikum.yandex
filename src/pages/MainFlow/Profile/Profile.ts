@@ -1,7 +1,5 @@
-import styles from './Profile.module.scss'
-import {handlebarsCompile} from "../../../utils/handlebarsCompile.ts";
-
-
+import styles from './Profile.module.scss';
+import { handlebarsCompile } from '../../../utils/handlebarsCompile.ts';
 
 const ProfilePage = `
 <div class=${styles.wrapper}>
@@ -29,8 +27,6 @@ const ProfilePage = `
     </form>
   </div>
 </div>
-`
+`;
 
-export default handlebarsCompile(ProfilePage)
-
-
+export default handlebarsCompile(ProfilePage);

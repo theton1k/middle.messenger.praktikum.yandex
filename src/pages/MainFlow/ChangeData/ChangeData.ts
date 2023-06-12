@@ -1,5 +1,5 @@
-import styles from './ChangeData.module.scss'
-import {handlebarsCompile} from "../../../utils/handlebarsCompile.ts";
+import styles from './ChangeData.module.scss';
+import { handlebarsCompile } from '../../../utils/handlebarsCompile.ts';
 
 const ChangeDataPage = `
 <div class=${styles.wrapper}>
@@ -18,8 +18,6 @@ const ChangeDataPage = `
     </form>
   </div>
 </div>
-`
+`;
 
-export default handlebarsCompile(ChangeDataPage)
-
-
+export default handlebarsCompile(ChangeDataPage);

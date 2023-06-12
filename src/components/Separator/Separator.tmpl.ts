@@ -1,4 +1,3 @@
-import styles from './Separator.module.scss'
+import styles from './Separator.module.scss';
 
-export default `<div class="${styles.separator} {{ className }}" />`
-
+export default `<div class="${styles.separator} {{ className }}" />`;

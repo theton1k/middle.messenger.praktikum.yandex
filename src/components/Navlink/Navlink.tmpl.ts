@@ -1,3 +1,3 @@
-import styles from './Navlink.module.scss'
+import styles from './Navlink.module.scss';
 
-export default `<a class="${styles.navlink} {{ className }}" href={{ href }}>{{ text }}</a>`
+export default `<a class="${styles.navlink} {{ className }}" href={{ href }}>{{ text }}</a>`;

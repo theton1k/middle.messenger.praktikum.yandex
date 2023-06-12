@@ -1,5 +1,5 @@
-import styles from './ChatList.module.scss'
-import ChatListItem from '../ChatListItem/ChatListItem.tmpl.ts'
+import styles from './ChatList.module.scss';
+import ChatListItem from '../ChatListItem/ChatListItem.tmpl.ts';
 
 export default `
 <div class=${styles.chatListWrapper}>
@@ -20,4 +20,4 @@ export default `
       <li>${ChatListItem}</li>
       <li>${ChatListItem}</li>
   </ul>
-</div>`
+</div>`;

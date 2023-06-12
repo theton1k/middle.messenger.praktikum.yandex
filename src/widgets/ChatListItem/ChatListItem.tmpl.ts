@@ -1,4 +1,4 @@
-import styles from './ChatListItem.module.scss'
+import styles from './ChatListItem.module.scss';
 
 export default `
 <div class=${styles.chatListItem}>
@@ -12,4 +12,4 @@ export default `
     {{> MessageCounter count=5 }}
   </div>
 </div>
-`
+`;
