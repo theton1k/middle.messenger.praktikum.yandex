@@ -15,7 +15,5 @@
   "rules": {
     "prettier/prettier": "error"
   },
-  "parserOptions": {
-    "ecmaVersion": "latest"
-  }
+  "parser": "@typescript-eslint/parser"
 }
