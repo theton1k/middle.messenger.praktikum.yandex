@@ -2,7 +2,7 @@ import { Block } from '../../../utils';
 import AuthForm, { IAuthFormProps } from '../../../widgets/AuthForm';
 import styles from './styles.module.scss';
 
-export default class SignUp extends Block<IAuthFormProps> {
+export default class Login extends Block<IAuthFormProps> {
   constructor(props: IAuthFormProps) {
     super('div', props);
   }

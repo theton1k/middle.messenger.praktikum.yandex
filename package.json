@@ -32,5 +32,8 @@
     "typescript": "5.0.2",
     "vite": "4.3.9",
     "vite-plugin-handlebars": "1.6.0"
+  },
+  "dependencies": {
+    "nanoid": "4.0.2"
   }
 }

@@ -1,5 +1,5 @@
 import widgets from '../../../widgets';
-import context from '../../../data/context';
+import context from '../../../data';
 import { handlebarsCompile } from '../../../utils/handlebarsCompile.ts';
 
 const ServerErrorPage = widgets.ErrorBlock;

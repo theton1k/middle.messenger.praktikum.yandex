@@ -13,7 +13,9 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-this-alias": "off"
   },
   "parser": "@typescript-eslint/parser"
 }

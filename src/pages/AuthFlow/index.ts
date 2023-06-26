@@ -1,4 +1,4 @@
-import Login from './Login/Login.ts';
+import Login from './Login';
 import SignUp from './SignUp/SignUp.ts';
 
 export default {
