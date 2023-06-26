@@ -8,10 +8,10 @@
     "dev": "tsc && vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint:ts": "eslint src/**/*.ts[x]",
-    "lint:ts:fix": "yarn lint --fix",
-    "lint:scss": "stylelint src/**/*.[s]css",
-    "lint:scss:fix": "yarn stylelint --fix"
+    "lint:ts": "eslint src/**/*.ts",
+    "lint:ts:fix": "yarn lint:ts --fix",
+    "lint:scss": "stylelint src/**/*.scss",
+    "lint:scss:fix": "yarn lint:scss --fix"
   },
   "devDependencies": {
     "@types/express": "4.17.17",

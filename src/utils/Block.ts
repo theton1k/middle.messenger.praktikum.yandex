@@ -2,7 +2,7 @@ import { EventBus } from './EventBus.ts';
 import { nanoid } from 'nanoid';
 import Handlebars from 'handlebars';
 
-type TProps = Record<string, any>;
+type TProps = Record<string, any>; //prop can has different value
 type TChildren = Record<string, Block | Block[]>;
 
 export class Block<P extends TProps = any> {
@@ -141,6 +141,7 @@ export class Block<P extends TProps = any> {
   }
 
   protected compile(template: string, context: any) {
+    //context can has different value
     const contextAndStubs = { ...context };
 
     Object.entries(this.children).forEach(([name, component]) => {

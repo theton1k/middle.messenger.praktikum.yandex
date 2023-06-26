@@ -1,7 +1,5 @@
-import NotFound from './NotFound/NotFound.ts';
-import ServerError from './ServerError/ServerError.ts';
+import Error from './Error';
 
 export default {
-  NotFound,
-  ServerError,
+  Error,
 };

@@ -1,1 +1,1 @@
-export default `<div type="{{type}}" class="{{className}} {{style}}" id="{{ id }}">{{ label }}</div>`;
+export default `<div class="{{className}} {{style}}">{{ label }}</div>`;

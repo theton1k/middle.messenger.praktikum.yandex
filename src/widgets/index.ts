@@ -1,5 +1,5 @@
-import Chat from './Chat/Chat.tmpl.ts';
-import ChatList from './ChatList/ChatList.tmpl.ts';
-import ErrorBlock from './ErrorBlock/ErrorBlock.tmpl.ts';
+import Chat from './Chat';
+import ChatList from './ChatList';
+import AuthForm from './AuthForm';
 
-export default { Chat, ChatList, ErrorBlock };
+export default { Chat, ChatList, AuthForm };

@@ -1,2 +1,3 @@
 export { Block } from './Block.ts';
-export { handlebarsCompile } from './handlebarsCompile.ts';
+export { EventBus } from './EventBus.ts';
+export { render } from './render.ts';

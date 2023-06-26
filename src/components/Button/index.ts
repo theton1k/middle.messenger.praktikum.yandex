@@ -13,15 +13,20 @@ export const enum ButtonTypes {
   BUTTON = 'button',
 }
 
+export const enum ButtonTextStyle {
+  DEFAULT = 'defaultText',
+  DESTRUCTED = 'destructedText',
+}
+
 export interface IButtonProps {
   events: {
     click: () => void;
   };
   label: string;
-  type: ButtonTypes;
-  theme: ButtonThemes;
+  type?: ButtonTypes;
+  theme?: ButtonThemes;
   className?: string;
-  style?: string;
+  textStyle?: ButtonTextStyle;
 }
 
 export default class Button extends Block<IButtonProps> {
@@ -29,9 +34,17 @@ export default class Button extends Block<IButtonProps> {
     super('button', props);
   }
 
-  render() {
-    this.props.style = styles[this.props.theme];
+  init() {
+    this.props.type = this.props.type || ButtonTypes.BUTTON;
+    const theme = this.props.theme || ButtonThemes.DEFAULT;
+    const textStyle = this.props.textStyle || ButtonTextStyle.DEFAULT;
 
+    this.props.className = `${this.props.className || ''} ${styles[theme]} ${
+      styles[textStyle]
+    }`;
+  }
+
+  render() {
     return this.compile(template, this.props);
   }
 }

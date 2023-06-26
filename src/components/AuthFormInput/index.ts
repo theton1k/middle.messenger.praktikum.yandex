@@ -1,30 +1,7 @@
 import { Block } from '../../utils';
 import template from './template.ts';
 import styles from './styles.module.scss';
-
-export type HTMLInputTypeAttribute =
-  | 'button'
-  | 'checkbox'
-  | 'color'
-  | 'date'
-  | 'datetime-local'
-  | 'email'
-  | 'file'
-  | 'hidden'
-  | 'image'
-  | 'month'
-  | 'number'
-  | 'password'
-  | 'radio'
-  | 'range'
-  | 'reset'
-  | 'search'
-  | 'submit'
-  | 'tel'
-  | 'text'
-  | 'time'
-  | 'url'
-  | 'week';
+import { HTMLInputTypeAttribute } from '../../types';
 
 export interface IAuthFormInputInputProps {
   inputName: string;

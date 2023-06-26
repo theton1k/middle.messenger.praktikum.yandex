@@ -5,7 +5,7 @@ import partials from './components';
 
 import './scss/index.scss';
 import { domain } from './config.ts';
-import { render } from './utils/render.ts';
+import { render } from './utils';
 import data from './data';
 
 Object.entries(partials).forEach(([key, value]) => {
@@ -13,39 +13,37 @@ Object.entries(partials).forEach(([key, value]) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('#app');
-
-  if (!root) {
-    throw Error('no root');
-  }
-
   const path = window.location.href.split(domain).at(-1);
 
-  const loginPage = new pages.Login(data.pages.login);
-  const signUpPage = new pages.Login(data.pages.signUp);
+  const loginPage = new pages.Login(data.login);
+  const signUpPage = new pages.Login(data.signUp);
+  const chatPage = new pages.Chat();
+  const changeDataPage = new pages.ChangeProfileData(data.changeData);
+  const changePasswordPage = new pages.ChangePassword(data.changeData);
+  const profilePage = new pages.ChangePassword(data.profile);
+  const notFoundPage = new pages.Error(data.notFound);
+  const serverErrorPage = new pages.Error(data.serverError);
 
   const getPage = () => {
     switch (path) {
       case '/login':
       case '':
       case '/':
-        render('#app', loginPage);
-        break;
+        return render('#app', loginPage);
       case '/sign-up':
-        render('#app', signUpPage);
-        break;
+        return render('#app', signUpPage);
       case '/main':
-        return pages.Main();
+        return render('#app', chatPage);
       case '/profile':
-        return pages.Profile();
+        return render('#app', profilePage);
       case '/change-password':
-        return pages.ChangePassword();
+        return render('#app', changePasswordPage);
       case '/change-data':
-        return pages.ChangeData();
+        return render('#app', changeDataPage);
       case '/server-error':
-        return pages.ServerError();
+        return render('#app', serverErrorPage);
       default:
-        return pages.NotFound();
+        return render('#app', notFoundPage);
     }
   };
 

@@ -1,6 +1,5 @@
 button{
-  cursor: pointer;
-  font-size: 14px;
+  font-size: var(--font-m);
   width: 100%;
   background: transparent;
 }
@@ -11,12 +10,22 @@ button div{
 
 .default {
   background: var(--color-blue);
-  color: var(--color-white);
   border-radius: 8px;
+  color: var(--color-white);
 }
 
 .outline {
   background:transparent;
+}
+
+.outline.defaultText{
   color: var(--color-blue);
 }
+
+.outline.destructedText {
+  color: var(--color-red);
+}
+
+
+
 
