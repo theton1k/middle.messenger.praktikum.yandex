@@ -1,4 +1,3 @@
-import styles from './styles.module.scss';
 import { Block } from '../../../utils';
 import Button, { IButtonProps } from '../../../components/Button';
 import UserInfoItem, {
@@ -6,12 +5,16 @@ import UserInfoItem, {
 } from '../../../components/UserInfoItem';
 import SidebarNav from '../../../components/SidebarNav';
 import template from './template.ts';
+import Form from '../../../components/Form';
+import styles from './styles.module.scss';
+import Avatar, { IAvatarProps } from '../../../components/Avatar';
 
 export interface IUserDataBaseProps {
   nickname?: string;
   inputs: IUserInfoItemProps[];
   buttons: IButtonProps[];
   buttonPosition?: 'buttonCenter' | 'buttonLeft';
+  avatar: IAvatarProps;
 }
 
 export default class UserDataBase extends Block<IUserDataBaseProps> {
@@ -20,25 +23,29 @@ export default class UserDataBase extends Block<IUserDataBaseProps> {
   }
 
   init() {
-    this.props.buttonPosition = this.props.buttonPosition || 'buttonCenter';
+    this.getContent()?.setAttribute('class', `${styles.wrapper}`);
 
-    console.log(
-      '${styles.wrapper} ${styles[this.props.buttonPosition]}',
-      `${styles.wrapper} ${styles[this.props.buttonPosition]}`
+    const inputs = [];
+
+    inputs.push(
+      new Avatar({
+        className: styles.avatar,
+        inputName: this.props.avatar.inputName,
+        disabled: !this.props.avatar.inputName || this.props.avatar.disabled,
+        nickname: this.props.avatar.nickname,
+        wrapperClassName: styles.avatarWrapper,
+      })
     );
 
-    this.getContent()?.setAttribute(
-      'class',
-      `${styles.wrapper} ${styles[this.props.buttonPosition]}`
-    );
+    inputs.push(...this.props.inputs.map((props) => new UserInfoItem(props)));
 
-    this.children.inputs = this.props.inputs.map(
-      (props) => new UserInfoItem(props)
-    );
+    const buttons = this.props.buttons.map((props) => new Button(props));
 
-    this.children.buttons = this.props.buttons.map(
-      (props) => new Button(props)
-    );
+    this.children.form = new Form({
+      inputs,
+      buttons,
+      buttonPosition: this.props.buttonPosition,
+    });
 
     this.children.sidebarNav = new SidebarNav();
   }

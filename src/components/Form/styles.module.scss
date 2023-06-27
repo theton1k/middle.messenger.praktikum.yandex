@@ -1,28 +1,11 @@
-.wrapper {
-  display: flex;
-  flex: 1;
-}
-
-.content {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 50%;
-  margin: 60px auto 0;
-
-  .avatar {
-    width: 130px;
-    height: 130px;
-    margin-bottom: 20px;
-  }
-
-  .avatarWrapper {
-    margin-bottom: 80px;
-  }
+  width: 100%;
+  flex: 1;
 }
 
-.formWrapper,
 .buttonWrapper {
   margin: 20px;
   width: 50%;

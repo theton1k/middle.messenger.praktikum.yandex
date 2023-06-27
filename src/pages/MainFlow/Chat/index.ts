@@ -22,7 +22,7 @@ export default class Index extends Block {
         {
           lastMessage: 'wregw4gr',
           lastMessageTime: '10:20',
-          unreadMessagesCount: 123,
+          unreadMessagesCount: 0,
           nickname: 'peta',
         },
         {
@@ -64,7 +64,7 @@ export default class Index extends Block {
       ],
     });
     this.children.chat = new Chat({
-      selectedChat: undefined,
+      selectedChat: '123',
     });
   }
 

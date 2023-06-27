@@ -25,8 +25,7 @@ export default class AuthForm extends Block<IAuthFormProps> {
     });
 
     this.children.inputs = this.props.inputs.map(
-      ({ type, label, inputName }) =>
-        new AuthFormInput({ inputName, type, label })
+      (input) => new AuthFormInput(input)
     );
 
     this.children.buttons = this.props.buttons.map(

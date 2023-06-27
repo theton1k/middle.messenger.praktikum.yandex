@@ -4,7 +4,7 @@ import template from './template.ts';
 
 export default class SidebarNav extends Block {
   constructor() {
-    super('div', {});
+    super('sidebar', {});
   }
 
   init() {

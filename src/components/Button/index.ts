@@ -22,11 +22,12 @@ export interface IButtonProps {
   events: {
     click: () => void;
   };
-  label: string;
+  label?: string;
   type?: ButtonTypes;
   theme?: ButtonThemes;
   className?: string;
   textStyle?: ButtonTextStyle;
+  wrapperClassName?: string;
 }
 
 export default class Button extends Block<IButtonProps> {
@@ -35,12 +36,16 @@ export default class Button extends Block<IButtonProps> {
   }
 
   init() {
-    this.props.type = this.props.type || ButtonTypes.BUTTON;
-    const theme = this.props.theme || ButtonThemes.DEFAULT;
-    const textStyle = this.props.textStyle || ButtonTextStyle.DEFAULT;
+    const { className, textStyle, type, theme, wrapperClassName } = this.props;
 
-    this.props.className = `${this.props.className || ''} ${styles[theme]} ${
-      styles[textStyle]
+    this.getContent()?.setAttribute('class', wrapperClassName || '');
+
+    this.props.type = type || ButtonTypes.BUTTON;
+    const buttonTheme = theme || ButtonThemes.DEFAULT;
+    const buttonTextStyle = textStyle || ButtonTextStyle.DEFAULT;
+
+    this.props.className = `${className || ''} ${styles[buttonTheme]} ${
+      styles[buttonTextStyle]
     }`;
   }
 

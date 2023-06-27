@@ -1,0 +1,34 @@
+.wrapper {
+  text-align: center;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  border-radius: 50%;
+  background: var(--color-avatar);
+}
+
+.avatarPicker {
+  background: var(--color-transparent);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0
+}
+
+.emptyAvatarPicker {
+  background: var(--color-transparent);
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+}
+
+.nickname {
+ bottom: 0;
+  position: relative;
+}

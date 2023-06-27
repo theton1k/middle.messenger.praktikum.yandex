@@ -103,18 +103,12 @@ const enabledProfileDataInputs = profileDataInputs.map((item) => ({
   disabled: false,
 }));
 
-const changeData: IUserDataBaseProps = {
-  inputs: enabledProfileDataInputs,
-  buttons: [
-    {
-      type: ButtonTypes.SUBMIT,
-      label: 'Сохранить',
-      events: { click: () => {} },
-    },
-  ],
-};
-
 const profile: IUserDataBaseProps = {
+  avatar: {
+    nickname: 'Иван',
+    disabled: false,
+    inputName: 'avatar',
+  },
   inputs: profileDataInputs,
   buttons: [
     {
@@ -138,6 +132,63 @@ const profile: IUserDataBaseProps = {
   nickname: 'Иван',
 };
 
+const changeProfileData: IUserDataBaseProps = {
+  avatar: {
+    disabled: false,
+    inputName: 'avatar',
+  },
+  inputs: enabledProfileDataInputs,
+  buttons: [
+    {
+      type: ButtonTypes.SUBMIT,
+      label: 'Сохранить',
+      events: { click: () => {} },
+    },
+  ],
+};
+
+const changePasswordInputs: IUserInfoItemProps[] = [
+  {
+    label: 'Старый пароль',
+    type: 'password',
+    inputName: 'oldPassword',
+    separator: true,
+    disabled: false,
+    value: '',
+  },
+  {
+    label: 'Новый пароль',
+    type: 'password',
+    inputName: 'newPassword',
+    separator: true,
+    disabled: false,
+    value: '',
+  },
+  {
+    label: 'Повторите новый пароль',
+    type: 'password',
+    inputName: 'repeatNewPassword',
+    separator: true,
+    disabled: false,
+    value: '',
+  },
+];
+
+const changePassword: IUserDataBaseProps = {
+  avatar: {
+    disabled: false,
+    inputName: 'avatar',
+  },
+  inputs: changePasswordInputs,
+  buttons: [
+    {
+      type: ButtonTypes.SUBMIT,
+      label: 'Сохранить',
+      events: { click: () => {} },
+    },
+  ],
+};
+
 const notFound: IErrorProps = {
   errorCode: 404,
   description: 'Не туда попали',
@@ -154,5 +205,6 @@ export default {
   notFound,
   serverError,
   profile,
-  changeData,
+  changeProfileData,
+  changePassword,
 };
