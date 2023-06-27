@@ -4,11 +4,7 @@ import template from './template.ts';
 import { Block } from '../../utils';
 
 export interface IFormProps {
-  nickname?: string;
-  inputs: Block[];
-  buttons: Block[];
-  buttonPosition?: 'buttonCenter' | 'buttonLeft';
-  buttonClass?: string;
+  block: Block;
 }
 
 export default class Form extends Block<IFormProps> {
@@ -17,12 +13,7 @@ export default class Form extends Block<IFormProps> {
   }
 
   init() {
-    this.props.buttonPosition = this.props.buttonPosition || 'buttonCenter';
-
-    this.getContent()?.setAttribute(
-      'class',
-      `${styles.form} ${styles[this.props.buttonPosition] || 'buttonCenter'}`
-    );
+    this.getContent()?.setAttribute('class', `${styles.form}`);
   }
 
   render() {
