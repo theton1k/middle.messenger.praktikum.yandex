@@ -27,6 +27,7 @@ export class Form extends Block<IFormProps> {
 
       for (let i = 0; i < inputs.length; i++) {
         consoleData[inputs[i].name] = inputs[i].value;
+        inputs[i].focus();
         inputs[i].blur();
       }
       console.log(consoleData);
