@@ -132,7 +132,7 @@ export class Block<P extends TProps = any> {
 
   private _addEvents() {
     const { events = {} } = this.props as P & {
-      events: Record<string, () => void>;
+      events: Record<string, (params: any) => void>;
     };
 
     Object.keys(events).forEach((eventName) => {

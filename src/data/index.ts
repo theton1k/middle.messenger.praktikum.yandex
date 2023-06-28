@@ -90,7 +90,7 @@ const profileDataInputs: IUserInfoItemProps[] = [
   {
     label: 'Телефон',
     inputName: 'phone',
-    separator: false,
+    separator: true,
     disabled: true,
     value: '+7 (909) 967 30 30',
   },

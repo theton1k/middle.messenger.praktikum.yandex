@@ -4,3 +4,4 @@ export { ChatFooter } from './ChatFooter';
 export { Form, type IFormProps } from './Form';
 export { SidebarNav } from './SidebarNav';
 export { BlockWrapper, type IBlockWrapperProps } from './BlockWrapper';
+export { InputBlock, type IInputBlockProps } from './InputBlock';

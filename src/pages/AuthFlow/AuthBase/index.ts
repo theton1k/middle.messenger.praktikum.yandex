@@ -2,17 +2,16 @@ import styles from './styles.module.scss';
 import { Block } from '../../../utils';
 
 import template from './template.ts';
-import { Form, BlockWrapper } from '../../../widgets';
 import {
-  AuthFormHeader,
-  Button,
-  AuthFormInput,
-  IAuthFormInputInputProps,
-  IButtonProps,
-} from '../../../components';
+  Form,
+  BlockWrapper,
+  IInputBlockProps,
+  InputBlock,
+} from '../../../widgets';
+import { AuthFormHeader, Button, IButtonProps } from '../../../components';
 
 export interface IAuthBaseProps {
-  inputs: IAuthFormInputInputProps[];
+  inputs: IInputBlockProps[];
   buttons: IButtonProps[];
   header: string;
 }
@@ -25,7 +24,9 @@ export class AuthBase extends Block<IAuthBaseProps> {
   init() {
     this.getContent()!.setAttribute('class', styles.wrapper);
 
-    const inputs = this.props.inputs.map((props) => new AuthFormInput(props));
+    const inputs = this.props.inputs.map(
+      (props) => new InputBlock({ ...props, className: styles.input })
+    );
 
     const buttons = this.props.buttons.map((props) => new Button(props));
 

@@ -1,25 +1,41 @@
 .userInfoItem {
   width: 100%;
-}
-
-.textWrapper {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 0;
-  align-items: center;
-  font-size: var(--font-l);
-  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .fieldName {
   color: var(--color-black);
 }
 
-.fieldValue {
+.input {
   color: var(--color-gray);
   flex:1;
   align-self: flex-end;
   text-align: right;
   margin-left: 30px;
   background: var(--color-transparent);
+}
+
+
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 0;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.inputLabelWrapperClassName {
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  width: 100%;
+
+  label {
+    margin: 0
+  }
 }

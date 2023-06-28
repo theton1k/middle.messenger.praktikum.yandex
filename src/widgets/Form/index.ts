@@ -5,7 +5,8 @@ import { Block } from '../../utils';
 export interface IFormProps {
   block: Block;
   events?: {
-    submit: (e: SubmitEvent) => void;
+    submit?: (e: SubmitEvent) => void;
+    blur?: (e: SubmitEvent) => void;
   };
 }
 
@@ -17,20 +18,21 @@ export class Form extends Block<IFormProps> {
   init() {
     this.getContent()!.setAttribute('class', `${styles.form}`);
 
+    const inputs = this.getContent()!.getElementsByTagName('input');
+
     const onSubmit = (e: SubmitEvent) => {
       e.preventDefault();
-
-      const inputs = this.getContent()!.getElementsByTagName('input');
 
       const consoleData: Record<string, string> = {};
 
       for (let i = 0; i < inputs.length; i++) {
         consoleData[inputs[i].name] = inputs[i].value;
+        inputs[i].blur();
       }
       console.log(consoleData);
     };
 
-    if (!this.props.events) {
+    if (!this.props.events?.submit) {
       this.props.events = {
         submit: onSubmit,
       };

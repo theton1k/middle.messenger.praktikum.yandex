@@ -1,16 +1,11 @@
 import { Block } from '../../utils';
 import styles from './styles.module.scss';
 import template from './template.ts';
-import { HTMLInputTypeAttribute } from '../../types';
 import { Separator } from '../Separator';
+import { IInputBlockProps, InputBlock } from '../../widgets';
 
-export interface IUserInfoItemProps {
-  label: string;
-  value: string;
-  type?: HTMLInputTypeAttribute;
-  inputName: string;
+export interface IUserInfoItemProps extends IInputBlockProps {
   separator: boolean;
-  disabled: boolean;
 }
 
 export class UserInfoItem extends Block<IUserInfoItemProps> {
@@ -19,10 +14,20 @@ export class UserInfoItem extends Block<IUserInfoItemProps> {
   }
 
   init() {
+    const { separator, ...inputProps } = this.props;
+
     this.getContent()!.setAttribute('class', styles.userInfoItem);
-    if (this.props.separator) {
+
+    if (separator) {
       this.children.separator = new Separator({});
     }
+
+    this.children.input = new InputBlock({
+      ...inputProps,
+      className: styles.input,
+      inputLabelWrapperClassName: styles.inputLabelWrapperClassName,
+      wrapperClassName: styles.inputWrapper,
+    });
   }
 
   render() {
