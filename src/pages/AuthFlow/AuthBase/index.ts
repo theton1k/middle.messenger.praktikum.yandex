@@ -1,15 +1,24 @@
-import { IAuthFormProps } from '../../../widgets/AuthForm';
 import styles from './styles.module.scss';
 import { Block } from '../../../utils';
-import AuthFormInput from '../../../components/AuthFormInput';
-import Button from '../../../components/Button';
-import template from './template.ts';
-import Form from '../../../components/Form';
-import AuthFormHeader from '../../../components/AuthFormHeader';
-import BlockWrapper from '../../../components/BlockWrapper';
 
-export default class AuthBase extends Block<IAuthFormProps> {
-  constructor(props: IAuthFormProps) {
+import template from './template.ts';
+import { Form, BlockWrapper } from '../../../widgets';
+import {
+  AuthFormHeader,
+  Button,
+  AuthFormInput,
+  IAuthFormInputInputProps,
+  IButtonProps,
+} from '../../../components';
+
+export interface IAuthBaseProps {
+  inputs: IAuthFormInputInputProps[];
+  buttons: IButtonProps[];
+  header: string;
+}
+
+export class AuthBase extends Block<IAuthBaseProps> {
+  constructor(props: IAuthBaseProps) {
     super('div', props);
   }
 

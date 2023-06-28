@@ -11,7 +11,7 @@ export interface IAvatarProps {
   src?: string;
 }
 
-export default class Avatar extends Block<IAvatarProps> {
+export class Avatar extends Block<IAvatarProps> {
   constructor(props: IAvatarProps) {
     super('div', props);
   }

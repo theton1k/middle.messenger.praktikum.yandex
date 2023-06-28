@@ -1,15 +1,14 @@
 import { Block } from '../../utils';
 import styles from './styles.module.scss';
-import ChatListItem, {
-  IChatListItemProps,
-} from '../../components/ChatListItem';
+import { IChatListItemProps, ChatListItem } from '../ChatListItem';
 import template from './template.ts';
+import { Navlink } from '../../components';
 
 export interface IChatListProps {
   list: IChatListItemProps[];
 }
 
-export default class ChatList extends Block<IChatListProps> {
+export class ChatList extends Block<IChatListProps> {
   constructor(props: IChatListProps) {
     super('div', props);
   }
@@ -20,6 +19,10 @@ export default class ChatList extends Block<IChatListProps> {
     this.children.chatList = this.props.list.map(
       (item) => new ChatListItem(item)
     );
+    this.children.navlink = new Navlink({
+      href: '/profile',
+      text: 'Профиль >',
+    });
   }
 
   render() {

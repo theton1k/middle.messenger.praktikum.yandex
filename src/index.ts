@@ -1,16 +1,9 @@
-import Handlebars from 'handlebars';
-
-import pages from './pages';
-import partials from './components';
+import * as pages from './pages';
 
 import './scss/index.scss';
 import { domain } from './config.ts';
 import { render } from './utils';
 import data from './data';
-
-Object.entries(partials).forEach(([key, value]) => {
-  Handlebars.registerPartial(key, value);
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.href.split(domain).at(-1);
@@ -24,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       case '/sign-up':
         return new pages.SignUp(data.signUp);
       case '/main':
-        return new pages.Chat();
+        return new pages.Main();
       case '/profile':
         return new pages.ChangeProfileData(data.changeProfileData);
       case '/change-password':

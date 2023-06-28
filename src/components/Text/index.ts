@@ -3,14 +3,14 @@ import template from './template.ts';
 import { COLORS, FONT_SIZES, FONT_WEIGHT } from '../../theme/config.ts';
 import styles from './styles.module.scss';
 
-interface ITextProps {
+export interface ITextProps {
   text?: string;
   size?: FONT_SIZES;
   color?: COLORS;
   weight?: FONT_WEIGHT;
   className?: string;
 }
-export default class Text extends Block<ITextProps> {
+export class Text extends Block<ITextProps> {
   constructor(props: ITextProps) {
     super('p', props);
   }

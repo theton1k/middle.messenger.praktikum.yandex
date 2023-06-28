@@ -9,7 +9,5 @@ export default `
       {{/if}}
       type="{{ type }}" name={{ inputName }} />
   </div>
-    {{#if separator}}
-      {{> Separator }}
-    {{/if}}
+    {{{separator}}}
 `;

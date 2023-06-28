@@ -30,7 +30,7 @@ export interface IButtonProps {
   wrapperClassName?: string;
 }
 
-export default class Button extends Block<IButtonProps> {
+export class Button extends Block<IButtonProps> {
   constructor(props: IButtonProps) {
     super('button', props);
   }

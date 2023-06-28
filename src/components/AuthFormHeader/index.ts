@@ -5,7 +5,7 @@ export interface IAuthFormHeaderProps {
   headerText: string;
 }
 
-export default class AuthFormHeader extends Block<IAuthFormHeaderProps> {
+export class AuthFormHeader extends Block<IAuthFormHeaderProps> {
   constructor(props: IAuthFormHeaderProps) {
     super('h2', props);
   }

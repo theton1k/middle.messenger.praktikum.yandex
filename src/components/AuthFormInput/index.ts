@@ -10,7 +10,7 @@ export interface IAuthFormInputInputProps {
   type?: HTMLInputTypeAttribute;
 }
 
-export default class AuthFormInput extends Block<IAuthFormInputInputProps> {
+export class AuthFormInput extends Block<IAuthFormInputInputProps> {
   constructor(props: IAuthFormInputInputProps) {
     super('div', props);
   }

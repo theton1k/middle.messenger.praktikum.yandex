@@ -2,13 +2,11 @@ import {
   ButtonTextStyle,
   ButtonThemes,
   ButtonTypes,
-} from '../components/Button';
-import { IAuthFormProps } from '../widgets/AuthForm';
-import { IUserInfoItemProps } from '../components/UserInfoItem';
-import { IErrorProps } from '../pages/ErrorFlow/Error';
-import { IUserDataBaseProps } from '../pages/UserDataFlow/UserDataBase';
+  IUserInfoItemProps,
+} from '../components';
+import { IAuthBaseProps, IErrorProps, IUserDataBaseProps } from '../pages';
 
-const login: IAuthFormProps = {
+const login: IAuthBaseProps = {
   inputs: [
     { label: 'Логин', inputName: 'login' },
     { label: 'Пароль', inputName: 'password', type: 'password' },
@@ -28,7 +26,7 @@ const login: IAuthFormProps = {
   header: 'Вход',
 };
 
-const signUp: IAuthFormProps = {
+const signUp: IAuthBaseProps = {
   inputs: [
     { label: 'Почта', inputName: 'email', type: 'email' },
     { label: 'Логин', inputName: 'login' },

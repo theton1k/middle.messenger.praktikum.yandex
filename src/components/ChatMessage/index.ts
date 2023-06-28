@@ -2,12 +2,12 @@ import { Block } from '../../utils';
 import styles from './styles.module.scss';
 import template from './template.ts';
 
-interface IChatMessageProps {
+export interface IChatMessageProps {
   isCurrentUserMessage: boolean;
   message: string;
 }
 
-export default class ChatMessage extends Block<IChatMessageProps> {
+export class ChatMessage extends Block<IChatMessageProps> {
   constructor(props: IChatMessageProps) {
     super('div', props);
   }

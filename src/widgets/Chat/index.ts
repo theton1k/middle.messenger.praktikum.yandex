@@ -1,15 +1,15 @@
 import { Block } from '../../utils';
 import styles from './styles.module.scss';
 import template from './template.ts';
-import ChatHeader from '../../components/ChatHeader';
-import ChatMessage from '../../components/ChatMessage';
-import ChatFooter from '../../components/ChatFooter';
+import { ChatHeader } from '../ChatHeader';
+import { ChatFooter } from '../ChatFooter';
+import { ChatMessage } from '../../components';
 
 export interface IChatProps {
   selectedChat?: string;
 }
 
-export default class Chat extends Block<IChatProps> {
+export class Chat extends Block<IChatProps> {
   constructor(props: IChatProps) {
     super('div', props);
   }
