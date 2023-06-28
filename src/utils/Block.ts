@@ -6,6 +6,7 @@ type TProps = Record<string, any>; //prop can has different value
 type TChildren = Record<string, Block | Block[]>;
 
 export class Block<P extends TProps = any> {
+  //prop can has different value
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -132,7 +133,7 @@ export class Block<P extends TProps = any> {
 
   private _addEvents() {
     const { events = {} } = this.props as P & {
-      events: Record<string, (params: any) => void>;
+      events: Record<string, (params: any) => void>; //params can be any value
     };
 
     Object.keys(events).forEach((eventName) => {

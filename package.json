@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "tsc && vite build && vite",
-    "dev": "tsc && vite",
-    "build": "tsc && vite build",
+    "start": "vite build && vite",
+    "dev": "tsc --noEmit && vite",
+    "build": "vite build",
     "preview": "vite preview",
-    "lint:ts": "eslint src/**/*.ts",
+    "lint:ts": "tsc --noEmit && eslint src/**/*.ts",
     "lint:ts:fix": "yarn lint:ts --fix",
     "lint:scss": "stylelint src/**/*.scss",
     "lint:scss:fix": "yarn lint:scss --fix"

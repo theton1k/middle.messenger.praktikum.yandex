@@ -1,6 +1,6 @@
 const netlify = 'netlify.app';
 const localhost = 'http://localhost:3000';
 
-const isDev = true;
+const isDev = false;
 
 export const domain = isDev ? localhost : netlify;
