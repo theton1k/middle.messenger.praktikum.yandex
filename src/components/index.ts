@@ -1,6 +1,5 @@
 export { Avatar, type IAvatarProps } from './Avatar';
 export { AuthFormHeader, type IAuthFormHeaderProps } from './AuthFormHeader';
-export { AuthFormInput, type IAuthFormInputInputProps } from './AuthFormInput';
 export { Input, type IInputProps } from './Input';
 export {
   Button,

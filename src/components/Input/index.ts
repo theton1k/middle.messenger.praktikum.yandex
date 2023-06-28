@@ -56,6 +56,7 @@ export class Input extends Block<IInputProps> {
       'class',
       `${styles.inputWrapper} ${className}`
     );
+
     this.getContent()!.setAttribute('name', inputName);
     this.getContent()!.setAttribute('placeholder', placeholder);
     this.getContent()!.setAttribute('type', type);

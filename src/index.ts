@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       case '/main':
         return new pages.Main();
       case '/profile':
-        return new pages.ChangeProfileData(data.changeProfileData);
+        return new pages.Profile(data.profile);
       case '/change-password':
         return new pages.ChangePassword(data.changePassword);
       case '/change-data':

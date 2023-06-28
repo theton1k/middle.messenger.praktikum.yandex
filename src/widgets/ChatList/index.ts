@@ -29,34 +29,3 @@ export class ChatList extends Block<IChatListProps> {
     return this.compile(template, this.props);
   }
 }
-
-// <H2>(FOR REVIEWER)</H2>
-// <nav>
-// <ul>
-//   <li>
-//     <a href="/login">login</a>
-// </li>
-// <li>
-// <a href="/sign-up">signUp</a>
-// </li>
-// <li>
-// <a href="/main">main</a>
-// </li>
-// <li>
-// <a href="/profile.ts">profile.ts</a>
-// </li>
-// <li>
-// <a href="/change-password">change password</a>
-// </li>
-// <li>
-// <a href="/change-data">change data</a>
-// </li>
-// <li>
-// <a href="/server-error">500</a>
-// </li>
-// <li>
-// <a href="/asd">404</a>
-//   </li>
-//   </ul>
-//   </nav>
-//   </div>

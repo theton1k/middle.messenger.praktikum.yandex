@@ -39,6 +39,7 @@ export class Button extends Block<IButtonProps> {
     const { className, textStyle, type, theme, wrapperClassName } = this.props;
 
     this.getContent()!.setAttribute('class', wrapperClassName || '');
+    this.getContent()!.setAttribute('type', type || ButtonTypes.BUTTON);
 
     this.props.type = type || ButtonTypes.BUTTON;
     const buttonTheme = theme || ButtonThemes.DEFAULT;
