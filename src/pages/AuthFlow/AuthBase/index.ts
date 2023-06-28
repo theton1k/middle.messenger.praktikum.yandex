@@ -14,7 +14,7 @@ export default class AuthBase extends Block<IAuthFormProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.wrapper);
+    this.getContent()!.setAttribute('class', styles.wrapper);
 
     const inputs = this.props.inputs.map((props) => new AuthFormInput(props));
 

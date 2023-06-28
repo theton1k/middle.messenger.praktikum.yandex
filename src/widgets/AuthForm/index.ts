@@ -19,7 +19,7 @@ export default class AuthForm extends Block<IAuthFormProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.formWrapper);
+    this.getContent()!.setAttribute('class', styles.formWrapper);
     this.children.header = new AuthFormHeader({
       headerText: this.props.header,
     });

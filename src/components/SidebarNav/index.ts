@@ -8,7 +8,7 @@ export default class SidebarNav extends Block {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.wrapper);
+    this.getContent()!.setAttribute('class', styles.wrapper);
   }
 
   render() {

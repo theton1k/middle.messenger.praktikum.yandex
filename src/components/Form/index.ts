@@ -5,6 +5,9 @@ import { Block } from '../../utils';
 
 export interface IFormProps {
   block: Block;
+  events?: {
+    submit: (e: SubmitEvent) => void;
+  };
 }
 
 export default class Form extends Block<IFormProps> {
@@ -13,7 +16,25 @@ export default class Form extends Block<IFormProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', `${styles.form}`);
+    this.getContent()!.setAttribute('class', `${styles.form}`);
+
+    const onSubmit = (e: SubmitEvent) => {
+      e.preventDefault();
+
+      const inputs = this.getContent()!.getElementsByTagName('input');
+
+      const consoleData: Record<string, string> = {};
+
+      for (let i = 0; i < inputs.length; i++) {
+        consoleData[inputs[i].name] = inputs[i].value;
+      }
+    };
+
+    if (!this.props.events) {
+      this.props.events = {
+        submit: onSubmit,
+      };
+    }
   }
 
   render() {

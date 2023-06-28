@@ -1,7 +1,4 @@
 .footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   padding: 10px 0;
 }
 
@@ -10,28 +7,36 @@
   flex:1
 }
 
-.attachButton {
-  width: 32px;
-  height: 32px;
-  background: transparent;
-}
+
 
 .attachButtonWrapper {
   width: 32px;
   height: 32px;
   background: transparent url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s") no-repeat;
   margin-right: 10px;
-}
 
-.sendButton {
-  width: 32px;
-  height: 32px;
-  background: transparent;
+  .attachButton {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+  }
 }
 
 .sendButtonWrapper {
   width: 32px;
   height: 32px;
-  background: transparent url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s") no-repeat;
-  margin-right: 10px;
+  margin-left: 24px;
+
+  .sendButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.formContent{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

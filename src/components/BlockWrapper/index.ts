@@ -12,7 +12,7 @@ export default class BlockWrapper extends Block<IBlockWrapperProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', this.props.className);
+    this.getContent()!.setAttribute('class', this.props.className);
   }
 
   render() {

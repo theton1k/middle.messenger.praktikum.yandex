@@ -13,7 +13,7 @@ export default class ChatMessage extends Block<IChatMessageProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute(
+    this.getContent()!.setAttribute(
       'class',
       this.props.isCurrentUserMessage
         ? styles.userMessage

@@ -16,7 +16,7 @@ export default class AuthFormInput extends Block<IAuthFormInputInputProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.inputWrapper);
+    this.getContent()!.setAttribute('class', styles.inputWrapper);
   }
 
   render() {

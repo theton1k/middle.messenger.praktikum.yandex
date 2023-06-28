@@ -15,7 +15,7 @@ export default class Chat extends Block<IChatProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.wrapper);
+    this.getContent()!.setAttribute('class', styles.wrapper);
 
     this.children.chatHeader = new ChatHeader({
       avatar: '',

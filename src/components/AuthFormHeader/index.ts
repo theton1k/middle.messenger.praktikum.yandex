@@ -11,7 +11,7 @@ export default class AuthFormHeader extends Block<IAuthFormHeaderProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.header);
+    this.getContent()!.setAttribute('class', styles.header);
   }
 
   render() {

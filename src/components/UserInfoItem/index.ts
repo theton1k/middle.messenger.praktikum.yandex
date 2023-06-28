@@ -18,8 +18,7 @@ export default class UserInfoItem extends Block<IUserInfoItemProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.userInfoItem);
-    console.log(this.getContent());
+    this.getContent()!.setAttribute('class', styles.userInfoItem);
   }
 
   render() {

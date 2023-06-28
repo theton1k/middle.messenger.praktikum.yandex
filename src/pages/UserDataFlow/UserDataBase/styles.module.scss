@@ -3,6 +3,10 @@
   flex: 1;
 }
 
+.formContent {
+  width: 100%;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -11,26 +15,34 @@
   width: 50%;
   margin: 60px auto 0;
 
-  .avatar {
-    width: 130px;
-    height: 130px;
-    margin-bottom: 20px;
-  }
 
-  .avatarWrapper {
-    margin-bottom: 80px;
-  }
 }
 
-.formWrapper,
-.buttonWrapper {
-  margin: 20px;
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0 20px;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 20px;
+}
+
+.inputWrapper {
+  margin-bottom: 60px;
+}
+
+.buttonsWrapper {
   width: 50%;
+  margin: 0 auto;
 }
 
-.buttonLeft {
-  .buttonWrapper {
-    margin: 20px auto 20px 0;
+
+.buttonsLeft {
     display: flex;
     flex-direction: column;
     width: auto;
@@ -44,6 +56,5 @@
         padding-left: 0;
       }
     }
-  }
 }
 

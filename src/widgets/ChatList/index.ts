@@ -15,7 +15,7 @@ export default class ChatList extends Block<IChatListProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.chatListWrapper);
+    this.getContent()!.setAttribute('class', styles.chatListWrapper);
 
     this.children.chatList = this.props.list.map(
       (item) => new ChatListItem(item)

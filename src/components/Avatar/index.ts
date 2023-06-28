@@ -17,7 +17,7 @@ export default class Avatar extends Block<IAvatarProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute(
+    this.getContent()!.setAttribute(
       'class',
       `${styles.wrapper} ${this.props.wrapperClassName || ''}`
     );

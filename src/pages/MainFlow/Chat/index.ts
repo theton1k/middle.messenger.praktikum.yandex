@@ -9,7 +9,7 @@ export default class Index extends Block {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.chatWrapper);
+    this.getContent()!.setAttribute('class', styles.chatWrapper);
 
     this.children.chatList = new ChatList({
       list: [

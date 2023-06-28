@@ -128,7 +128,7 @@ const profile: IUserDataBaseProps = {
       textStyle: ButtonTextStyle.DESTRUCTED,
     },
   ],
-  buttonPosition: 'buttonLeft',
+  buttonsLeft: true,
   nickname: 'Иван',
 };
 

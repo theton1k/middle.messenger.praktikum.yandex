@@ -13,7 +13,7 @@ export default class Error extends Block<IErrorProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.wrapper);
+    this.getContent()!.setAttribute('class', styles.wrapper);
   }
 
   render() {

@@ -8,12 +8,15 @@ import template from './template.ts';
 import Form from '../../../components/Form';
 import styles from './styles.module.scss';
 import Avatar, { IAvatarProps } from '../../../components/Avatar';
+import BlockWrapper from '../../../components/BlockWrapper';
+import Text from '../../../components/Text';
+import { FONT_SIZES, FONT_WEIGHT } from '../../../theme/config.ts';
 
 export interface IUserDataBaseProps {
   nickname?: string;
   inputs: IUserInfoItemProps[];
   buttons: IButtonProps[];
-  buttonPosition?: 'buttonCenter' | 'buttonLeft';
+  buttonsLeft?: boolean;
   avatar: IAvatarProps;
 }
 
@@ -23,28 +26,44 @@ export default class UserDataBase extends Block<IUserDataBaseProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', `${styles.wrapper}`);
+    this.getContent()!.setAttribute('class', `${styles.wrapper}`);
 
-    const inputs = [];
+    const { avatar, nickname, inputs, buttons, buttonsLeft } = this.props;
 
-    inputs.push(
-      new Avatar({
-        className: styles.avatar,
-        inputName: this.props.avatar.inputName,
-        disabled: !this.props.avatar.inputName || this.props.avatar.disabled,
-        nickname: this.props.avatar.nickname,
-        wrapperClassName: styles.avatarWrapper,
-      })
-    );
+    const formInputs = inputs.map((props) => new UserInfoItem(props));
 
-    inputs.push(...this.props.inputs.map((props) => new UserInfoItem(props)));
+    const formButtons = buttons.map((props) => new Button(props));
 
-    const buttons = this.props.buttons.map((props) => new Button(props));
+    const avatarBlock = new BlockWrapper({
+      block: [
+        new Avatar({
+          className: styles.avatar,
+          inputName: avatar.inputName,
+        }),
+        new Text({
+          text: nickname,
+          weight: FONT_WEIGHT.SemiBold,
+          size: FONT_SIZES.L,
+          className: styles.nickname,
+        }),
+      ],
+      className: styles.avatarWrapper,
+    });
+
+    const formContent = new BlockWrapper({
+      block: [
+        avatarBlock,
+        new BlockWrapper({ block: formInputs, className: styles.inputWrapper }),
+        new BlockWrapper({
+          block: formButtons,
+          className: buttonsLeft ? styles.buttonsLeft : styles.buttonsWrapper,
+        }),
+      ],
+      className: styles.formContent,
+    });
 
     this.children.form = new Form({
-      inputs,
-      buttons,
-      buttonPosition: this.props.buttonPosition,
+      block: formContent,
     });
 
     this.children.sidebarNav = new SidebarNav();

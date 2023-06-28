@@ -17,7 +17,7 @@ export default class ChatListItem extends Block<IChatListItemProps> {
   }
 
   init() {
-    this.getContent()?.setAttribute('class', styles.chatListItem);
+    this.getContent()!.setAttribute('class', styles.chatListItem);
 
     this.children.avatar = new Avatar({
       src: this.props.avatar,
