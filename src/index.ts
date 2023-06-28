@@ -15,37 +15,28 @@ Object.entries(partials).forEach(([key, value]) => {
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.href.split(domain).at(-1);
 
-  const loginPage = new pages.Login(data.login);
-  const signUpPage = new pages.Login(data.signUp);
-  const chatPage = new pages.Chat();
-  const changeDataPage = new pages.ChangeProfileData(data.changeProfileData);
-  const changePasswordPage = new pages.ChangePassword(data.changePassword);
-  const profilePage = new pages.ChangePassword(data.profile);
-  const notFoundPage = new pages.Error(data.notFound);
-  const serverErrorPage = new pages.Error(data.serverError);
-
   const getPage = () => {
     switch (path) {
       case '/login':
       case '':
       case '/':
-        return render('#app', loginPage);
+        return new pages.Login(data.login);
       case '/sign-up':
-        return render('#app', signUpPage);
+        return new pages.SignUp(data.signUp);
       case '/main':
-        return render('#app', chatPage);
+        return new pages.Chat();
       case '/profile':
-        return render('#app', profilePage);
+        return new pages.ChangeProfileData(data.changeProfileData);
       case '/change-password':
-        return render('#app', changePasswordPage);
+        return new pages.ChangePassword(data.changePassword);
       case '/change-data':
-        return render('#app', changeDataPage);
+        return new pages.ChangeProfileData(data.changeProfileData);
       case '/server-error':
-        return render('#app', serverErrorPage);
+        return new pages.Error(data.serverError);
       default:
-        return render('#app', notFoundPage);
+        return new pages.Error(data.notFound);
     }
   };
 
-  getPage();
+  render('#app', getPage());
 });

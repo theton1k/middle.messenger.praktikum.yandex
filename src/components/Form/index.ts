@@ -28,6 +28,7 @@ export default class Form extends Block<IFormProps> {
       for (let i = 0; i < inputs.length; i++) {
         consoleData[inputs[i].name] = inputs[i].value;
       }
+      console.log(consoleData);
     };
 
     if (!this.props.events) {
