@@ -15,7 +15,8 @@
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-this-alias": "off"
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-non-null-assertion": "warn"
   },
   "parser": "@typescript-eslint/parser"
 }
