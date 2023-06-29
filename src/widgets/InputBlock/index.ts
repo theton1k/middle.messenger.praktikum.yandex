@@ -27,16 +27,12 @@ export class InputBlock extends Block<IInputBlockProps> {
       ...inputProps,
       events: {
         blur: (e) => {
-          if (
-            !validateInput(
-              this.props.inputName,
-              (e.target as HTMLInputElement).value
-            )
-          ) {
-            this.props.error = 'Неверный формат';
-          } else {
-            this.props.error = '';
-          }
+          const { isValid, error } = validateInput(
+            this.props.inputName,
+            (e.target as HTMLInputElement).value
+          );
+
+          this.props.error = isValid ? '' : error;
         },
       },
     });

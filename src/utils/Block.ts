@@ -124,6 +124,8 @@ export class Block<P extends TProps = any> {
   private _render() {
     const block = this.render();
 
+    this._removeEvents();
+
     this._element!.innerHTML = '';
 
     this._element!.append(block);
@@ -138,6 +140,16 @@ export class Block<P extends TProps = any> {
 
     Object.keys(events).forEach((eventName) => {
       this._element?.addEventListener(eventName, events[eventName]);
+    });
+  }
+
+  private _removeEvents() {
+    const { events = {} } = this.props as P & {
+      events: Record<string, (params: any) => void>; //params can be any value
+    };
+
+    Object.keys(events).forEach((eventName) => {
+      this._element?.removeEventListener(eventName, events[eventName]);
     });
   }
 
