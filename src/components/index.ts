@@ -1,19 +1,15 @@
-import Button from './Button/Button.tmpl.ts'
-import FormInput from './FormInput/FormInput.tmpl.ts'
-import Navlink from './Navlink/Navlink.tmpl.ts'
-import Avatar from './Avatar/Avatar.tmpl.ts'
-import UserInfoItem from './UserInfoItem/UserInfoItem.tmpl.ts'
-import MessageCounter from './MessageCounter/MessageCounter.tmpl.ts'
-import Separator from './Separator/Separator.tmpl.ts'
-
-
-export default {
+export { Avatar, type IAvatarProps } from './Avatar';
+export { AuthFormHeader, type IAuthFormHeaderProps } from './AuthFormHeader';
+export { Input, type IInputProps } from './Input';
+export {
   Button,
-  Navlink,
-  FormInput,
-  Avatar,
-  MessageCounter,
-  UserInfoItem,
-  Separator
-}
-
+  type IButtonProps,
+  ButtonTypes,
+  ButtonTextStyle,
+  ButtonThemes,
+} from './Button';
+export { ChatMessage, type IChatMessageProps } from './ChatMessage';
+export { Text, type ITextProps } from './Text';
+export { Navlink, type INavlinkProps } from './Navlink';
+export { Separator, type ISeparatorProps } from './Separator';
+export { UserInfoItem, type IUserInfoItemProps } from './UserInfoItem';

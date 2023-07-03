@@ -1,0 +1,16 @@
+.chatListWrapper {
+  min-width: 320px;
+  padding: 10px;
+  background: var(--color-light-gray);
+  overflow: scroll;
+}
+
+.chatListHeader {
+  text-align: right;
+}
+
+.chatList {
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 320px;
+}

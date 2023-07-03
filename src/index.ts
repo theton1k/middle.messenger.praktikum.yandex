@@ -1,65 +1,35 @@
-import Handlebars from "handlebars";
+import * as pages from './pages';
 
-import pages from "./pages";
-import partials from './components'
-
-import './scss/index.scss'
-import {domain} from "./config.ts";
-
-
-Object.entries(partials).forEach(([key, value]) => {
-  Handlebars.registerPartial(key, value)
-})
-
-Handlebars.registerHelper("authFormInputs", function(context, options) {
-  return (
-    context
-      .map(function(item: any) {
-        return options.fn(item)
-      }).join("\n")
-  );
-});
-
-Handlebars.registerHelper("authFormButtons", function(context, options) {
-  return (
-    context
-      .map(function(item: any) {
-        return options.fn(item)
-      })
-      .join("\n")
-  );
-});
+import './scss/index.scss';
+import { domain } from './config.ts';
+import { render } from './utils';
+import data from './data';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.href.split(domain).at(-1);
 
-  const root = document.querySelector('#app')!
-
-  const path = window.location.href.split(domain).at(-1)
-
-  const getPage = () =>{
+  const getPage = () => {
     switch (path) {
       case '/login':
       case '':
       case '/':
-        return pages.Login()
+        return new pages.Login(data.login);
       case '/sign-up':
-        return pages.SignUp()
+        return new pages.SignUp(data.signUp);
       case '/main':
-        return pages.Main()
+        return new pages.Main();
       case '/profile':
-        return pages.Profile()
+        return new pages.Profile(data.profile);
       case '/change-password':
-        return pages.ChangePassword()
+        return new pages.ChangePassword(data.changePassword);
       case '/change-data':
-        return pages.ChangeData()
+        return new pages.ChangeProfileData(data.changeProfileData);
       case '/server-error':
-        return pages.ServerError()
+        return new pages.Error(data.serverError);
       default:
-        return pages.NotFound()
-
+        return new pages.Error(data.notFound);
     }
-  }
+  };
 
-  root.innerHTML = getPage()
-})
-
+  render('#app', getPage());
+});

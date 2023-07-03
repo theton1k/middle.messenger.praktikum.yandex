@@ -1,0 +1,18 @@
+.userMessage,
+.interlocutorMessage{
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 45%;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.userMessage {
+  background: var(--color-user-message);
+  align-self: flex-end;
+}
+
+.interlocutorMessage {
+  background: var(--color-interlocutor-message);
+}
+

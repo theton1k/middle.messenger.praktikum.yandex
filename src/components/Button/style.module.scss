@@ -1,0 +1,31 @@
+button{
+  font-size: var(--font-m);
+  width: 100%;
+  background: transparent;
+}
+
+button div.label{
+  padding: 12px;
+}
+
+.default {
+  background: var(--color-blue);
+  border-radius: 8px;
+  color: var(--color-white);
+}
+
+.outline {
+  background:transparent;
+}
+
+.outline.defaultText{
+  color: var(--color-blue);
+}
+
+.outline.destructedText {
+  color: var(--color-red);
+}
+
+
+
+
